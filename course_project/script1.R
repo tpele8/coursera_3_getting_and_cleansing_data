@@ -76,3 +76,8 @@
   colnames(avgValsDF) <- c("subject_ID", "activity_code", dfColNames)
   activityTempDF <- data.frame(subject_ID = avgValsDF$subject_ID, activity_code = avgValsDF$activity_code, activity = activityLabels[match(avgValsDF$activity_code, activityLabels$activity_code), 2])
   finalDF <- cbind(activityTempDF, avgValsDF[,3:ncol(avgValsDF)])
+  
+  
+  
+  
+  
