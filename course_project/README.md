@@ -24,14 +24,14 @@ The data comes in several different files which need to be joined together into 
 
 * The data comes in several different files:
   + The data consist of a test and a train dataset.  Both the test and train datasets need to be combined to form a full dataset.
-    +  The train dataset representd 30% of the sample population, while the test dataset represents 70% of the sample population.
-    +  The test and train datasets contain the same number of variables, and the same variable dimensions.  The only difference is the size of the datasets.
-    + The test/train datasets consist of files which display the activity measurements (X_test/train.txt), the codes for the activities which were measured (y_test/train.txt), and the subject codes for the subjects performing the activities (subject_test/train.txt).
-    + There are also inertial signals for each test/train dataset, but these were not used since the project calls for only mean and standard deviation measurements to be used.
+    ++  The train dataset representd 30% of the sample population, while the test dataset represents 70% of the sample population.
+    ++  The test and train datasets contain the same number of variables, and the same variable dimensions.  The only difference is the size of the datasets.
+    ++ The test/train datasets consist of files which display the activity measurements (X_test/train.txt), the codes for the activities which were measured (y_test/train.txt), and the subject codes for the subjects performing the activities (subject_test/train.txt).
+    ++ There are also inertial signals for each test/train dataset, but these were not used since the project calls for only mean and standard deviation measurements to be used.
 
   +  There are also files whose attributes apply to the sample population as a whole
-    + These files exist irrespective of test/train datasets and can be applied to both
-    + These files are the descriptions of the activies (activity_labels.txt), and the measurement variable names (features.txt).
+    ++ These files exist irrespective of test/train datasets and can be applied to both
+    ++ These files are the descriptions of the activies (activity_labels.txt), and the measurement variable names (features.txt).
 
 * The data was joined in the train dataset first, then separately in the test dataset.
   + Data from the X_train.txt file was merged with the subject_train.txt file and the y_train.txt file.
@@ -39,12 +39,13 @@ The data comes in several different files which need to be joined together into 
   + The subject code derived from the subject_train.txt file was given the column label "subject_ID".
   + The activity code derived from the y_train.txt file was given the column lable "activty_code".
   + The activity description derived from the activity_labels.txt file was given the column label "activity".
-  +The measurement column names were derived from the file features.txt
+  + The measurement column names were derived from the file features.txt
 
 * The test dataset was joined following the same steps as the train dataset above.
 * The test and train datasets were then joined together to form the full sample dataset.
   + There were a total of 564 columns and 10299 rows
 
+##Analysis
 * All activity columns that did not deal with the mean or standard deviation of a measurement were then removed 
   + Once the unused columns had been removed, there were 82 total columns remaining
   + The activity columns were then averaged per subject per measured activity and saved into a separate data frame and presented.
