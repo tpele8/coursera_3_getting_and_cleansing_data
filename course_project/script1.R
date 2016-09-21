@@ -2,7 +2,7 @@
   rm(list=ls())
   cat("\014")
 ################################
-  
+
 ###### Reading in files which are independent of test/train datasets ######
   features <- read.table("/Users/i64425/Documents/Coursera/03 - Getting and Cleansing Data/Course Project/UCI HAR Dataset/features.txt")
   activityLabels <- read.table("/Users/i64425/Documents/Coursera/03 - Getting and Cleansing Data/Course Project/UCI HAR Dataset/activity_labels.txt")
@@ -45,6 +45,8 @@
   colsList <- grep("mean|std", value = TRUE, colnames(fullDF))
   colsList2 <- c(colnames(fullDF)[1:3], colsList)
   modDF <- fullDF[,colnames(fullDF)%in%colsList2]
+  
+  colnames(modDF)
 
 ###### Calculate the average of each variable for each activity and each subject ######
   ### Create an array of distinct subject_IDs ###
@@ -77,7 +79,6 @@
   activityTempDF <- data.frame(subject_ID = avgValsDF$subject_ID, activity_code = avgValsDF$activity_code, activity = activityLabels[match(avgValsDF$activity_code, activityLabels$activity_code), 2])
   finalDF <- cbind(activityTempDF, avgValsDF[,3:ncol(avgValsDF)])
   
-  
-  
+  write.table(finalDF, "./finalMeansDF.txt", row.names = FALSE)
   
   
