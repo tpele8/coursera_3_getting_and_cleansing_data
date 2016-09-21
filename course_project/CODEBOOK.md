@@ -56,7 +56,8 @@ Following are the steps to analysis of this data
 -	subject_ID (integer)
 -	activity_code(integer)
 -	activity (string)
-####Test Data
+
+###Test Data
 *	Do the same for the test data as was done for the train data
 
 ####Joining and subsetting datasets 
@@ -64,7 +65,7 @@ Following are the steps to analysis of this data
 *	Subset the datasets by removing all columns (attributes) that do not contain mean or standard deviation data
 *	Rename the columns with their appropriate attribute names
 *	Create a new dataset and store the average values for each attribute per subject per activity
-*	Write the data to a file
+*	Write the data to a file.
 
 ###Attributes
 Following are the attributes of the final tidy dataset
